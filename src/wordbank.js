@@ -1,11 +1,11 @@
 export class Wordbank {
   async getDinoName(){
-    try{
       let response = await fetch ('http://dinoipsum.herokuapp.com/api/?format=json');
       let jsonifiedResponse = await response.json();
       return jsonifiedResponse;
-    } catch(error) {
-      console.error("There was an error handling your request: " + error.message);
+      let response2 = await fetch (`https://api.giphy.com/v1/gifs/search?api_key=eA5QrPG0kgbvymKiUi3pJqKZ0ZY54uIB&q=hangman`)
+      let jsonifiedResponse2 = await response.json();
+      return jsonifiedResponse2;
     }
-  }
-}
+
+    }
