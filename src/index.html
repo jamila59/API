@@ -3,14 +3,44 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <title>Hang-Man</title>
-    <form class="formOne">
-      <label for="input">Guess Letter</label>
-      <input type="text" name="input" id="input">
-      <button type="button" name="button">Guess letter!</button>
-    <div class="dinoOutput">
-
-    </div>
   </head>
   <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Dino-Man</h1>
+      </div>
+      <form class="formOne">
+        <label for="input">Input Letter</label>
+        <input type="text" name="input" id="input">
+        <button type="button" name="button" class="btn btn-info">Guess letter!</button>
+      </form><br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card header">
+            <p>Letters correctly guessed:</p>
+          </div>
+          <div class="card body">
+            <div class="hiddenWord responses">
+            </div>
+          </div>
+        </div>
+          <div class="col-md-4">
+            <div class="card header">
+              <p>Letters guessed:</p>
+            </div>
+            <div class="card body">
+              <div class="dinoOutput responses">
+              </div>
+            </div>
+          </div>
+            <div class="col-md-4">
+              <div class="card header">
+                <p>Your Score:</p>
+              </div>
+              <div class="card body">
+                <div class="scoreCounter responses">
+                </div>
+              </div>
+          </div>
  </body>
 </html>

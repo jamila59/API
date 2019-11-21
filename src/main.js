@@ -8,26 +8,37 @@ import { Wordbank } from './wordbank';
 
 
 $(document).ready(function() {
+  // debugger;
   let myNewGame;
   let wordbank = new Wordbank();
   (async () => {
     console.log("Ran!");
     const response = await wordbank.getDinoName();
     let answerWord = getElements(response);
-    console.log(answerWord);
-    let i = Math.floor(Math.random() * 5);
+    console.log(answerWord); //console log gives array of 30 strings
+    let i = Math.floor(Math.random() * 5); //console log i gives random number
     myNewGame = new Hangman(answerWord[i]);
+    console.log(answerWord[i]) //gives one words
+    let answerWord1 = answerWord[i].toLowerCase().split("");
+    $(".hiddenWord").text(myNewGame.checkWord());
+    console.log(answerWord1);
+
+
   })();
   const getElements = function(response) {
     return response[1];
     }
-    const getElements1 = function(response2) {
-      return response2[0];
-      }
 
-  $(".formOne").click(function(){
+  $("button").click(function(){
     let userInput = $("input#input").val();
+    $(".dinoOutput").append(userInput+ "<br>");
+    $(".scoreCounter").append(myNewGame.score+ "<br>");
+    console.log(userInput); //takes user input
+    console.log(myNewGame.score);
     myNewGame.checkWord(userInput);
-    wordbank.getDinoName();
+    $(".hiddenWord").text(myNewGame.showWord);
+    $(".hiddenWord").show();
+
+    // wordbank.getDinoName();
   });
 });
